@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('ezcatApp', () => ezcatApp);
+AppRegistry.registerComponent('rnstarter', () => ezcatApp);

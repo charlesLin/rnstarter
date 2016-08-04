@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import CounterApp from './CounterApp';
+import XApp from './XApp';
 
 import { Provider } from 'react-redux';
 
@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <CounterApp />
+        <XApp />
       </Provider>
     );
   }
