@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet, Platform } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Counter from './components/Counter';
@@ -26,9 +26,11 @@ class XApp extends Component {
 
 
   render() {
+
     const { state, actions } = this.props;
+    const barStyle = Platform.OS == "android" ? { top: 0 } : {};
     return (
-      <TabNavigator>
+      <TabNavigator tabBarStyle={barStyle} style={styles.tabBar}>
         <TabNavigator.Item
           selected={this.state.selectedTab === 'home'}
           title="Home"
@@ -62,5 +64,14 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
+const styles = StyleSheet.create({
+  tabBar: {
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    position: 'absolute'
+  }
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(XApp);
